@@ -120,14 +120,3 @@ dataset_schema:
     └── timeline_stats.py
 ```
 
-## Contributing
-
-We welcome contributions to `annotaudit`! Please see our `CONTRIBUTING.md` (to be added) for guidelines on how to contribute.
-
-## License
-
-This project is licensed under the MIT License - see the `LICENSE` (to be added) file for details.
-
-## Support
-
-For questions, issues, or feature requests, please open an issue on the GitHub repository.

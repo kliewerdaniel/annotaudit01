@@ -1,0 +1,10 @@
+pandas
+numpy
+matplotlib
+scikit-learn
+krippendorff
+openai
+tqdm
+seaborn
+pyyaml
+ollama

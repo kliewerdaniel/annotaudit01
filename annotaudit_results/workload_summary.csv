@@ -1,0 +1,4 @@
+annotator_id,total_tasks,total_duration_seconds,total_duration_hours,avg_task_duration_seconds,flag_daily_overload,flag_weekly_overload
+ann_001,12,163,0.04527777777777778,13.583333333333334,False,False
+ann_002,9,241,0.06694444444444445,26.77777777777778,False,False
+ann_003,9,78,0.021666666666666667,8.666666666666666,False,False

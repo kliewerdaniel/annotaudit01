@@ -1,0 +1,6 @@
+task_id,annotator_id,label,timestamp,duration_seconds,wage_per_hour,text,ollama_relabel
+1,ann_001,positive,2023-01-01 09:00:00,15,20.0,This is a great product!,
+2,ann_002,negative,2023-01-01 09:05:00,25,22.0,"Terrible experience, very slow.",
+3,ann_001,neutral,2023-01-01 09:10:00,10,20.0,"It was okay, nothing special.",
+4,ann_003,positive,2023-01-01 09:12:00,5,18.0,Absolutely loved it!,
+5,ann_002,positive,2023-01-01 09:15:00,30,22.0,Highly recommend this service.,

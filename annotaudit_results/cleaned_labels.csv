@@ -1,0 +1,31 @@
+task_id,annotator_id,label,timestamp,duration_seconds,wage_per_hour,text
+1,ann_001,positive,2023-01-01 09:00:00,15,20.0,This is a great product!
+2,ann_002,negative,2023-01-01 09:05:00,25,22.0,"Terrible experience, very slow."
+3,ann_001,neutral,2023-01-01 09:10:00,10,20.0,"It was okay, nothing special."
+4,ann_003,positive,2023-01-01 09:12:00,5,18.0,Absolutely loved it!
+5,ann_002,positive,2023-01-01 09:15:00,30,22.0,Highly recommend this service.
+6,ann_001,negative,2023-01-01 09:20:00,12,20.0,Not what I expected at all.
+7,ann_003,neutral,2023-01-01 09:25:00,8,18.0,"Could be better, could be worse."
+8,ann_001,positive,2023-01-01 09:30:00,18,20.0,Fantastic quality for the price.
+9,ann_002,negative,2023-01-01 09:35:00,22,22.0,Very disappointed with the outcome.
+10,ann_003,positive,2023-01-01 09:40:00,14,18.0,Exceeded my expectations.
+11,ann_001,positive,2023-01-02 10:00:00,16,20.0,Still loving this product!
+12,ann_002,negative,2023-01-02 10:05:00,28,22.0,Service has not improved.
+13,ann_001,neutral,2023-01-02 10:10:00,9,20.0,"Just as before, average."
+14,ann_003,positive,2023-01-02 10:12:00,4,18.0,Quick and perfect!
+15,ann_002,positive,2023-01-02 10:15:00,32,22.0,Always a pleasure.
+16,ann_001,negative,2023-01-02 10:20:00,11,20.0,Still not happy.
+17,ann_003,neutral,2023-01-02 10:25:00,7,18.0,It's fine.
+18,ann_001,positive,2023-01-02 10:30:00,19,20.0,Consistently good.
+19,ann_002,negative,2023-01-02 10:35:00,20,22.0,Still a bad experience.
+20,ann_003,positive,2023-01-02 10:40:00,13,18.0,Highly satisfied.
+21,ann_001,positive,2023-01-03 11:00:00,17,20.0,Amazing!
+22,ann_002,negative,2023-01-03 11:05:00,26,22.0,Awful.
+23,ann_001,positive,2023-01-03 11:10:00,6,20.0,So good!
+24,ann_003,negative,2023-01-03 11:12:00,3,18.0,Horrible.
+25,ann_002,positive,2023-01-03 11:15:00,35,22.0,Love it.
+26,ann_001,negative,2023-01-03 11:20:00,10,20.0,Dislike.
+27,ann_003,neutral,2023-01-03 11:25:00,9,18.0,Meh.
+28,ann_001,positive,2023-01-03 11:30:00,20,20.0,Perfect.
+29,ann_002,negative,2023-01-03 11:35:00,23,22.0,No.
+30,ann_003,positive,2023-01-03 11:40:00,15,18.0,Yes.

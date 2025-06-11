@@ -1,0 +1,3 @@
+task_id,annotator_id,label,timestamp,duration_seconds,wage_per_hour,text,flag_reason
+14,ann_003,positive,2023-01-02 10:12:00,4,18.0,Quick and perfect!,Task completed too quickly (duration < 5 seconds)
+24,ann_003,negative,2023-01-03 11:12:00,3,18.0,Horrible.,Task completed too quickly (duration < 5 seconds)

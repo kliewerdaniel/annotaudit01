@@ -79,6 +79,56 @@ dataset_schema:
       values: ["positive", "negative", "neutral"]
 ```
 
+## Detailed Explanation of `main.py`
+
+The `main.py` script serves as the command-line interface (CLI) for the `annotaudit` toolkit. It handles argument parsing, data loading, and orchestrates the execution of various auditing, ethics, cleansing, and visualization modules based on user-specified flags.
+
+### How it Works
+
+1.  **Argument Parsing**: Uses `argparse` to define and parse command-line arguments. Users can specify the input data path, output directory, and which specific audit/analysis modules to run.
+2.  **Module Imports**: Dynamically adds the parent directory to `sys.path` to allow importing modules from `audit`, `ethics`, `cleansing`, and `viz` subdirectories.
+3.  **Data Loading (`load_data` function)**:
+    *   Supports loading data from `.csv` and `.jsonl` file formats into a pandas DataFrame.
+    *   It's designed to be flexible for different annotation data structures.
+4.  **Main Execution Flow (`main` function)**:
+    *   Creates the output directory (`annotaudit_results` by default) if it doesn't exist.
+    *   Loads the input dataset using `load_data`.
+    *   **Simulated Column Creation**: For demonstration purposes, if certain key columns (`annotator_id`, `task_id`, `label`, `timestamp`, `duration_seconds`, `wage_per_hour`) are not present in the loaded DataFrame, it generates dummy data for them. In a real-world scenario, these columns would be expected in your input dataset or defined via a configuration.
+    *   **Conditional Module Execution**: Based on the command-line arguments (`--run_all`, `--consistency`, `--drift`, etc.), it calls the relevant functions from the imported modules:
+        *   **`audit` modules**:
+            *   `consistency.compute_agreement`: Calculates inter-annotator agreement scores.
+            *   `drift.analyze_label_drift`: Analyzes shifts in label distribution over time.
+            *   `speed_check.flag_fast_tasks`: Identifies tasks completed unusually quickly.
+            *   `redundancy_check.resolve_disagreements`: Resolves label disagreements, typically using majority voting.
+        *   **`ethics` modules**:
+            *   `workload_analysis.analyze_workload`: Detects annotators working unhealthy hours.
+            *   `wage_efficiency.estimate_wage_efficiency`: Estimates how annotator pay aligns with effort.
+        *   **`cleansing` modules**:
+            *   `label_filter.filter_noisy_labels`: Removes inconsistent or noisy samples from the dataset.
+            *   `auto_relabel.relabel_samples_with_ollama`: (Optional) Uses an Ollama LLM to relabel samples. This requires an Ollama server running locally.
+        *   **`viz` modules**:
+            *   `annotator_profiles.plot_annotator_performance`: Generates visual profiles of annotator performance.
+            *   `timeline_stats.plot_timeline_stats`: Plots trends of annotation volume, drift, and errors over time.
+    *   Each module's results (e.g., consistency scores, drift scores, flagged tasks) are printed to the console and saved as CSV files in the specified output directory. Visualizations are saved as PNG images.
+
+### Command-Line Arguments
+
+*   `data_path` (positional argument): Path to the input dataset (CSV or JSONL format).
+*   `--output_dir` (optional, default: `annotaudit_results`): Directory to save all generated audit results and visualizations.
+*   `--run_all` (flag): If set, executes all available audit, ethics, and cleansing modules.
+*   `--consistency` (flag): Runs inter-annotator consistency checks.
+*   `--drift` (flag): Analyzes label distribution drift over time.
+*   `--speed_check` (flag): Flags tasks submitted too quickly.
+*   `--redundancy_check` (flag): Resolves disagreements using majority voting.
+*   `--workload_analysis` (flag): Detects annotators working unhealthy hours.
+*   `--wage_efficiency` (flag): Estimates annotator pay alignment with effort.
+*   `--label_filter` (flag): Removes noisy or contradicting samples.
+*   `--auto_relabel` (flag): Uses Ollama LLM to relabel samples locally (requires Ollama server running).
+*   `--annotator_profiles` (flag): Generates annotator performance profiles.
+*   `--timeline_stats` (flag): Plots trends of annotation volume, drift, and errors.
+
+This structure allows users to run a comprehensive suite of analyses or target specific aspects of their annotation data quality and annotator performance.
+
 ## Project Structure
 
 ```
@@ -119,4 +169,3 @@ dataset_schema:
     ├── annotator_profiles.py
     └── timeline_stats.py
 ```
-

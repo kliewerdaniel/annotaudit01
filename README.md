@@ -15,8 +15,8 @@ A developer-friendly Python toolkit designed to audit, cleanse, and analyze huma
 To get started with `annotaudit`, clone the repository and install the required dependencies:
 
 ```bash
-git clone https://github.com/your-username/annotaudit.git
-cd annotaudit
+git clone https://github.com/kliewerdaniel/annotaudit01.git
+cd annotaudit01
 pip install -r requirements.txt
 ```
 
